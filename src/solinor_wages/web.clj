@@ -11,7 +11,8 @@
             [clojure.java.io :as io]
             [hiccup.core :as h]
             [ring.adapter.jetty :as jetty]
-            [environ.core :refer [env]]))
+            [environ.core :refer [env]])
+  (:gen-class))
 
 (defroutes app
   (GET "/" []
