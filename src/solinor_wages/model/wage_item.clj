@@ -5,7 +5,7 @@
 ;; This spec is for localhost usage
 (def spec { :classname "org.postgresql.Driver"
             :subprotocol "postgresql"
-            :subname (or (System/getenv "DATABASE_URL") "//localhost:5432/solinorapp")
+            :subname (System/getenv "DATABASE_URL")
             :user "spdxlsltqqwuxi"
             :password "WKy2HlWED7B3CxuQvloQUsL0tH"})
 
