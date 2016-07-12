@@ -2,11 +2,15 @@
   (:require [clojure.java.jdbc :as sql]
             [clojure.string :as str]))
 
-(def spec { :classname "org.postgresql.Driver"
+;; This spec is for localhost usage
+(comment (def spec { :classname "org.postgresql.Driver"
             :subprotocol "postgresql"
             :subname (or (System/getenv "DATABASE_URL") "//localhost:5432/solinorapp")
             :user "solinorapp"
-            :password "solinorapp"})
+            :password "solinorapp"}))
+
+(def spec (or (System/getenv "DATABASE_URL")
+              "postgresql://localhost:5432/solinorapp"))
 
 (def HOUR 60)
 (def normalwage 3.75)
