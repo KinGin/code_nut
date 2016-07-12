@@ -65,7 +65,6 @@
   (if (wage_for_person_for_month_exists? person_id month year)
     (sql/execute! spec ["update wages_person set wage_of_month =(wage_of_month + ?) where person = ?" (calculateWage worktime wage) person_id] )
     (sql/insert! spec :wages_person {:person_name person_name :person person_id :wage_of_month (calculateWage worktime wage) :month month :year year}))
-  ;;(sql/update! spec :wages_person {:person_name person_name :wage_of_month worktime :month month} ["person = ?" person_id "month =?" month "year = ?" year]))
 )
 
 (defn insertWork [person_name person_id date start end]
