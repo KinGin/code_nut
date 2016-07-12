@@ -13,11 +13,6 @@
             [ring.adapter.jetty :as jetty]
             [environ.core :refer [env]]))
 
-(defn splash []
-  {:status 200
-   :headers {"Content-Type" "text/plain"}
-   :body "Tirsdsdssk"})
-
 (defroutes app
   (GET "/" []
     (index/index (db/all)))
