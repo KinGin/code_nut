@@ -27,20 +27,3 @@
           doall))]
           (doseq [result-set result]
             (parseLine result-set)))))
-
- (comment(defn readFile ([in-file]
-  (with-open [in-file (iov/reader in-file)]
-    (doall (for [lines (->> (csv/parse-csv in-file)
-          remove-comments
-          mappify
-          doall)] ( println (parseLine lines)))
-      )))))
-
- (comment (defn readFile ([in-file]
-  (with-open [in-file (iov/reader in-file)]
-    (->> (csv/parse-csv in-file)
-          remove-comments
-          mappify
-          (doseq [line (line-seq in-file)]
-            (let [record (parseLine line)]
-            )))))))
