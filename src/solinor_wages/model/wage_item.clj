@@ -3,14 +3,14 @@
             [clojure.string :as str]))
 
 ;; This spec is for localhost usage
-(def spec { :classname "org.postgresql.Driver"
+(comment (def spec { :classname "org.postgresql.Driver"
             :subprotocol "postgresql"
             :subname (System/getenv "DATABASE_URL")
             :user "spdxlsltqqwuxi"
-            :password "WKy2HlWED7B3CxuQvloQUsL0tH"})
+            :password "WKy2HlWED7B3CxuQvloQUsL0tH"}))
 
-(comment (def spec (or (System/getenv "DATABASE_URL")
-              "postgresql://localhost:5432/solinorapp")))
+(def spec (or (System/getenv "DATABASE_URL")
+              "postgresql://localhost:5432/solinorapp"))
 
 (def HOUR 60)
 (def normalwage 3.75)
