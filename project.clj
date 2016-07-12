@@ -1,4 +1,4 @@
-(defproject clojure-getting-started "1.0.0-SNAPSHOT"
+(defproject solinor_wages "1.0.0-SNAPSHOT"
   :description "Solinor wages app"
   :url "http://solinor-wages.herokuapp.com"
   :license {:name "Eclipse Public License v1.0"
