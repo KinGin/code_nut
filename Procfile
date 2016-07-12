@@ -1,1 +1,1 @@
-web: java $JVM_OPTS -cp target/solinor_app.jar clojure.main -m solinor_wages.web
+web: java $JVM_OPTS -cp target/solinor_wages_standalone.jar clojure.main -m solinor_wages.web
