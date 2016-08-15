@@ -24,12 +24,12 @@
     (db/deleteData)
     (response/redirect "/"))
   (POST "/upload"
-     {{{tempfile :tempfile filename :filename} :file} :params :as params}
-     (io/copy tempfile (io/file "resources" "public" filename))
-     (csvReader/readFile (str "resources/public/" filename))
-     (response/redirect "/"))
+    {{{tempfile :tempfile filename :filename} :file} :params :as params}
+    (io/copy tempfile (io/file "resources" "public" filename))
+    (csvReader/readFile (str "resources/public/" filename))
+    (response/redirect "/"))
   (ANY "*" []
-       (route/not-found (slurp (io/resource "404.html")))))
+    (route/not-found (slurp (io/resource "404.html")))))
 
 (defn -main [& [port]]
   (migration/migrate)
